@@ -1,0 +1,122 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+@{
+    ViewBag.Title = "Filter";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="/filter.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img style="width: 200px;" src="/images/logo1.jpg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <a style="margin-left: 800px;font-size: x-large;" class="nav-item nav-link active" href="/Home/Index">Home <span class="sr-only">(current)</span></a>
+                }
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <label style="font-size: x-large;" class="nav-item nav-link"> Hoşgeldiniz @User.Identity.Name</label>
+                }
+
+                <a style="font-size: x-large;" class="nav-item nav-link" href="/Home/Beauty">Content</a>
+                <a style="font-size: x-large;" class="nav-item nav-link" href="/Home/Contact">Contact</a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a style="font-size: x-large" href="/Home/Logout" class="nav-item nav-link">Logout</a>
+                }
+
+            </div>
+        </div>
+    </nav>
+
+
+    <div>Randevu ve bilgi almak için istediğiniz kuaför salonuna tıklayınız.Farklı bir sayfaya yönlendirileceksiniz</div>
+    <div style="margin-left: 600px;color: brown;font-family: 'Times New Roman', Times, serif;"><h1>En çok randevu alınanlar</h1></div>
+    <table id="myTable">
+        <tr class="body">
+            <th style="width:50%;">İlçe</th>
+            <th style="width:50%;">Kuaför</th>
+        </tr>
+        <tr>
+
+            <td>
+                Çukurova
+            </td>
+
+            <td>
+                <a href="/Account/RandevuAl">
+                    Mehtap Kuaför
+                </a>
+            </td>
+            <td>Asel Kuaför</td>
+            <td>Sibel Kuaför</td>
+
+
+        </tr>
+        <tr>
+            <td>Seyhan</td>
+            <td>A salon</td>
+            <td>B salon</td>
+            <td>C salon</td>
+        </tr>
+        <tr>
+            <td>Yüreğir</td>
+            <td>A salon</td>
+            <td>B salon</td>
+            <td>C salon</td>
+        </tr>
+        <tr>
+            <td>Özal</td>
+            <td>A salon</td>
+            <td>B salon</td>
+            <td>C salon</td>
+        </tr>
+    </table>
+
+    <div style="margin-left: 400px; margin-top: -350px;">
+
+        <div class="card" style="width: 18rem;position: absolute;">
+            <img class="card-img-top" src="/images/hairr.jpeg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Mehtap Kuaför</h5>
+                <p class="card-text">Tamamen profosyonel bir ekipten oluşmuştur.</p>
+                <p>Adres Çukurova mahallesi</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="card" style="width: 18rem; margin-left: 700px;position: absolute;">
+        <img class="card-img-top" src="/images/hairr.jpeg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Mehtap Kuaför</h5>
+            <p class="card-text">Tamamen profosyonel bir ekipten oluşmuştur.</p>
+            <p>Adres Çukurova mahallesi</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;margin-left: 1000px;position: absolute;">
+        <img class="card-img-top" src="/images/hairr.jpeg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Mehtap Kuaför</h5>
+            <p class="card-text">Tamamen profosyonel bir ekipten oluşmuştur.</p>
+            <p>Adres Çukurova mahallesi</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+</body>
